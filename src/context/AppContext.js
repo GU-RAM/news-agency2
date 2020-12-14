@@ -2,7 +2,10 @@ import React, { createContext, useState, useEffect } from 'react';
 import { getUsers, getPosts } from '../api/index';
 import { createDataFetcher } from '../utilities/helpers';
 
-const AppContext = createContext();
+const AppContext = createContext({
+  posts: [],
+  users: [],
+});
 
 const AppContextComponent = ({ children }) => {
   const [posts, setPosts] = useState([]);

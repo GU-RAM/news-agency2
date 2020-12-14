@@ -1,15 +1,17 @@
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { AppContextComponent } from './context/AppContext';
-import AllPosts from './containers/AllPosts/AllPosts';
+import Routes from './Routes';
 import './App.css';
 
 function App() {
   return (
     <AppContextComponent>
-      <div className='App'>
-        <AllPosts />
-      </div>
-      ;
+      <Router>
+        <div className='App'>
+          <Routes />
+        </div>
+      </Router>
     </AppContextComponent>
   );
 }

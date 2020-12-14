@@ -1,29 +1,20 @@
 import axios from 'axios';
+import ApiConfig from '../config/api';
 
 async function getPosts() {
   try {
-    const { data } = await axios.get(
-      'https://jsonplaceholder.typicode.com/posts'
-    );
-    console.log('getPosts -> data', data);
+    const { data } = await axios.get(`${ApiConfig.MAIN_ENDPOINT}/posts`);
     return data;
-  } catch (error) {
-    console.log(error);
-  }
+  } catch (error) {}
 
   return [];
 }
 
 async function getUsers() {
   try {
-    const { data } = await axios.get(
-      'https://jsonplaceholder.typicode.com/users'
-    );
-    console.log('getUsers -> data', data);
+    const { data } = await axios.get(`${ApiConfig.MAIN_ENDPOINT}/users`);
     return data;
-  } catch (error) {
-    console.log(error);
-  }
+  } catch (error) {}
 
   return [];
 }
